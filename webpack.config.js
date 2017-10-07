@@ -19,24 +19,26 @@ module.exports = {
         search: ['./src/**/*.intl']
       })
     ]
-  },
-  module: {
-    rules: [{
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'stage-0']
-        }
-      },
-      {
-        test: /\.(intl|i18n)$/i,
-        use: [
-          IntlPlugin.loader(),
-          'yaml-loader'
-        ]
-      },
-      { test: /\.css$/, use: "css" },
-      { test: /\.(eot|gif|jpg|png|svg|ttf|woff)$/, use: "url-loader?limit=100000" }
-    ]
-  };
+  }
+  // ,
+  // module: {
+  //   rules: [{
+  //       test: /\.js$/,
+  //       exclude: /node_modules/,
+  //       loader: 'babel-loader',
+  //       query: {
+  //         presets: ['es2015', 'stage-0']
+  //       }
+  //     },
+  //     {
+  //       test: /\.(intl|i18n)$/i,
+  //       use: [
+  //         IntlPlugin.loader(),
+  //         'yaml-loader'
+  //       ]
+  //     },
+  //     { test: /\.css$/, use: "css" },
+  //     { test: /\.(eot|gif|jpg|png|svg|ttf|woff)$/, use: "url-loader?limit=100000" }
+  //   ]
+  // }
+;
