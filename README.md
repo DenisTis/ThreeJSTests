@@ -8,6 +8,8 @@ Additionally to what we done before, we need to do following:
 [X] Automation to build development version and production version with documentation
 
 [ ] Decide how to implement navigation to different views inside of single-page-application
+    Decided to user React with Router
+    Important: for react, view (similar to html+css), should be separated from viewmodel, because React itself can have it in one file
 [ ] Implement internationalization
 
 [ ] Build start page of the application with multi-language support

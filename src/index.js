@@ -1,11 +1,5 @@
-/** Test of documentation
- * 
- * 
- * @param {string} news - any text
- */
-function MakeMyDay(news) {
-  this.startParameter = new Date();
-  console.log(this.startParameter + " " + news);
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App.jsx';
 
-let test = new MakeMyDay("Hello");
+ReactDOM.render( < App / > , document.getElementById('root'));

@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 
-var BabelPlugin = require("babel-webpack-plugin");
+var BabelPlugin = require('babel-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const common = require('./webpack.common.js');
 
@@ -15,10 +15,6 @@ module.exports = merge(common, {
       compact: false
     }),
     new UglifyJSPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    })
+    new webpack.DefinePlugin({'process.env': {'NODE_ENV': JSON.stringify('production')}})
   ]
 });
