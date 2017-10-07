@@ -3,14 +3,17 @@ Tests of three.js project implementation
 
 Learning of three.js library and what could be achieved with it.
 
-1. Project setup.
-Workspace environment configured in VS Code.
-Webpack configured for single-page-application (test with command "npm run build")
-Project libraries (three.js, cannon.js and others added)
-Documentation generation added. To generate, use "documentation build src/** -f html -o docs"
+1.1 Final project setup:
+Additionally to what we done before, we need to do following:
+[X] Automation to build development version and production version with documentation
 
-NEXT STEPS: 
-in next branch I will add REACT to have navigation to different views for single-page-application setup
-once working, I will try to implement internationalization with Intl
+[ ] Decide how to implement navigation to different views inside of single-page-application
+[ ] Implement internationalization
 
-Optionally, I will add webpack configuration for babel (old versions compatibility) and minify for production version
+[ ] Build start page of the application with multi-language support
+[ ] Make this page responsive due to bootstrap
+
+========Next branch================
+[ ] THREEJS + CANNON initialization and finalization
+[ ] Correct adding and removal of scene objects
+[ ] Memory management tests
