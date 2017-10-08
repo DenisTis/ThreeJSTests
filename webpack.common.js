@@ -5,16 +5,28 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   module: {
     loaders: [{
-      test: /\.jsx?$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/,
-      query: {
-        presets: ['es2015', 'react']
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015', 'react']
+        }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
       }
-    }]
+    ]
   },
   plugins: [
     new webpack.ProvidePlugin({
