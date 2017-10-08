@@ -11,24 +11,25 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 //Internationalization
 import { addLocaleData, IntlProvider } from 'react-intl';
 
-let ruLocaleData = require('react-intl/locale-data/ru');
-addLocaleData(ruLocaleData);
-let i18nConfig = {
-  locale: 'ru',
-  messages: {
-    "home.header": "Стартовая страница",
-    "home.toTest": "К тестовой странице",
-    "test.header": "Начало тестовой страницы",
-    "test.button": "Нажать"
-  }
+import en from 'react-intl/locale-data/en';
+import ru from 'react-intl/locale-data/ru';
+addLocaleData(en);
+addLocaleData(ru);
+console.log(navigator.language);
+let messages = {
+ru: require('./i18n/ru.json'),
+en: require('./i18n/en.json')  
 };
+//Languages as "en-US" make Intl fail, not clear why
+// I think I found why. reason is, all messages from all languages have to be put to one file
+let locale = navigator.language.substr(0,2);
 
 //Views
 import Home from './components/Home.jsx';
 import Test from './components/Test.jsx';
 
 ReactDom.render((
-  <IntlProvider locale={i18nConfig.locale} messages={i18nConfig.messages}>
+  <IntlProvider locale={locale} messages={messages[locale]}>
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Home} />
