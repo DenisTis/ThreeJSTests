@@ -6,6 +6,10 @@ import { DropdownButton, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default class Home extends React.Component {
+  dropdownSelect(eventKey, event) {
+    console.log(event +" " +eventKey);
+  }
+
   render() {
     return (
       <div style={{ textAlign: 'center' }}>
@@ -13,9 +17,9 @@ export default class Home extends React.Component {
           <FormattedMessage id="home.header" />
         </h1>
         <div>
-          <DropdownButton title="Language" id="home.Dropdown" >
-            <MenuItem eventKey="1">EN</MenuItem>
-            <MenuItem eventKey="2">RU</MenuItem>
+          <DropdownButton title="Language" id="home.Dropdown" onSelect={this.dropdownSelect}>
+            <MenuItem eventKey="en">EN</MenuItem>
+            <MenuItem eventKey="ru">RU</MenuItem>
           </DropdownButton>
           <p style={{ marginTop: '10px' }}>
             <Link to="/test">
