@@ -3,9 +3,19 @@ Tests of three.js project implementation
 
 Learning of three.js library and what could be achieved with it.
 
-1.1 Final project setup:
-Additionally to what we done before, we need to do following:
-[X] Automation to build development version and production version with documentation
+1.2 React-native setup:
+Scope is to be able to build two version: web and android in same project
+
+React native should have different entry point
+React native should have its own views
+Only JS components can be reused
+
+[] install react-native and react-native cli
+[] react-native init native (create react-native project in folder native)
+[] configure gitignore to skip generated code in native folder
+[] configure npm script to run code to deploy it on android
+
+
 
 Decide how to implement navigation to different views inside of single-page-application?
 [X] Decided to user React with Router
@@ -21,3 +31,5 @@ Decide how to implement navigation to different views inside of single-page-appl
 [ ] THREEJS + CANNON initialization and finalization
 [ ] Correct adding and removal of scene objects
 [ ] Memory management tests
+
+
