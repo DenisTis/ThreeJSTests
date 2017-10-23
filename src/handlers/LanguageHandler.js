@@ -14,12 +14,12 @@ function LanguageHandler() {
     en: require('../i18n/en.json')
   };
   let locale = navigator.language.substr(0, 2);
-  let changeLocale = function(newLocale) {
-    this.locale = newLocale;
-  }
   this.getLocale = function() {
     return locale;
   }
+  this.setLocale = function(newLocale) {
+    locale = newLocale;
+  };
   this.getMessages = function() {
     return messages[locale];
   }

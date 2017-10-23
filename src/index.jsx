@@ -10,12 +10,13 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 //Internationalization
 import LanguageHandler from './handlers/LanguageHandler.js';
-import { addLocaleData, IntlProvider } from 'react-intl';
+import { IntlProvider } from 'react-intl';
 
 //Views
 import Home from './components/Home.jsx';
 import Test from './components/Test.jsx';
 
+// rebuild this part with function which could be re-triggered
 ReactDom.render((
   <IntlProvider locale={LanguageHandler.getLocale()} messages={LanguageHandler.getMessages()}>
   <BrowserRouter>
@@ -28,3 +29,23 @@ ReactDom.render((
 ),
   document.getElementById('root')
 );
+
+//Example 2 from net
+//questions - how to set datastore?
+
+// let ApplicationClass = class Home extends React.Component{
+//    render() {
+//       //make use of this.props.state...
+//    }
+//   };
+//   let locale = "";
+//   let dataStore = {};
+  
+//   let ApplicationComponent = React.createElement(
+//     ApplicationClass,
+//   {state : dataStore.getState()}
+// );
+
+// dataStore.onChange(function(){
+//   ReactDOM.render(ApplicationComponent, document.getElementById('root'));
+// });

@@ -5,9 +5,26 @@ import { DropdownButton, MenuItem } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 
+import LanguageHandler from '../handlers/LanguageHandler.js';
+
 export default class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        language: LanguageHandler.getLocale()
+    };
+}
+
   dropdownSelect(eventKey, event) {
+    LanguageHandler.setLocale(eventKey);
     console.log(event +" " +eventKey);
+    //this will re-render current page.
+    // How to force update on application itself?
+//    this.forceUpdate();
+//change of state triggers render method as well
+    this.state = {
+      language: LanguageHandler.getLocale()
+  };    
   }
 
   render() {
@@ -17,7 +34,7 @@ export default class Home extends React.Component {
           <FormattedMessage id="home.header" />
         </h1>
         <div>
-          <DropdownButton title="Language" id="home.Dropdown" onSelect={this.dropdownSelect}>
+          <DropdownButton title="Language" id="home.Dropdown" onSelect={this.dropdownSelect.bind(this)}>
             <MenuItem eventKey="en">EN</MenuItem>
             <MenuItem eventKey="ru">RU</MenuItem>
           </DropdownButton>
