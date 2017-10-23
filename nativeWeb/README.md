@@ -5,13 +5,22 @@ Learning of three.js library and what could be achieved with it.
 
 1.2 React-native setup:
 Scope is to be able to build two version: web and android in same project
+Following implementation from here:
+http://jkaufman.io/react-web-native-codesharing/
+
+First thing:
+now I was able to start Android,
+and found that npm android script is called and builds the application with data from src
+By this most probably I do not have to create any native project folder and can skip some configuration tasks
+
+(Later I just have to figure out how to build the same but for production and where it would be built in)
 
 React native should have different entry point
 React native should have its own views
 Only JS components can be reused
 
 [] install react-native and react-native cli
-[] react-native init native (create react-native project in folder native)
+[] react-native init nativus (create react-native project in folder nativus)
 [] configure gitignore to skip generated code in native folder
 [] configure npm script to run code to deploy it on android
 

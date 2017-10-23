@@ -4,7 +4,7 @@ import { AppRegistry, Text, View } from 'react-native';
 class Greeting extends Component {
   render() {
     return ( <
-      Text > Hello { this.props.name }! < /Text>
+      Text > Report { this.props.name }! < /Text>
     );
   }
 }
@@ -13,13 +13,14 @@ export default class LotsOfGreetings extends Component {
   render() {
     return ( <
       View style = {
-        { alignItems: 'center' } } >
+        { alignItems: 'center' }
+      } >
       <
-      Greeting name = 'Rexxar' / >
+      Greeting name = 'First name' / >
       <
-      Greeting name = 'Jaina' / >
+      Greeting name = 'Last name' / >
       <
-      Greeting name = 'Valeera' / >
+      Greeting name = 'Prefix' / >
       <
       /View>
     );

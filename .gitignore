@@ -1,6 +1,5 @@
-/assets
-/dist
-/node_modules
-/docs
-# React-native folder 
-/native
+.vscode/
+nativeWeb/__tests__/
+nativeWeb/android/
+nativeWeb/ios/
+nativeWeb/node_modules/
